@@ -1,0 +1,24 @@
+include /mobile-nav.pug
+
+block vars
+
+doctype html
+html 
+  head 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css')
+    //- link(rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css')
+    //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css' integrity='sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH' crossorigin='anonymous')
+    //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css')
+    link(rel='stylesheet' type='text/css' href='/css/style.css')
+    script(type='text/javascript' src='/js/main.js')
+
+  body 
+    //- include /ui-nav.pug
+
+    section#panel.standard.desktop(class="" + panel_class )
+      +mobileNav('top')
+
+      block content
+
+      +mobileNav('bottom')

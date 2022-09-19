@@ -1,0 +1,26 @@
+extends /layout.pug
+
+block vars
+  - var panel_class = "three-assets print"
+
+block content
+  .container-outer
+    .container-inner
+      h5.panel-header Panel Header Goes Here Max Characters Lorem Ipsum Dolor Sit Amet Aenean Suscipit
+      .panel-card
+        .column-one
+          .image
+            img.img-responsive(src='https://picsum.photos/520/440.jpg' width='520' height='440')
+          .image-group
+            .image
+              img.img-responsive(src='https://picsum.photos/255/255.jpg?random=1' width='255' height='255')
+            .image
+              img.img-responsive(src='https://picsum.photos/255/255.jpg?random=2' width='255' height='255')
+        .column-two
+          .blurb
+            h3 Secondary header lorem ipsum dolor sit amete consec tetur adipiscing elite morbi eu erat tortor. Donec tempor placerat feugiate vestibulum nib sapien.
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum ornare risus, placerat auctor tellus aliquam a. Mauris gravida elit quis nisl accumsan ultricies. Donec finibus, ante ac elementum eleifend, sem odio aliquet velit, quis pulvinar orci tortor vitae velit. Nullam faucibus egestas feugiat. Aliquam erat volutpat ipsum semper fringilla. 
+            p Vivamus vitae purus luctus, venenatis odio eu, luctus lectus. Quisque vel sem vel erat posuere sollicitudin. Cras ullamcorper urna tellus, imperdiet pulvinar enim dignissim nec. Aliquam sed turpis id neque lacinia scelerisque et id mi. Ut quis orci nisl. Mauris feugiat hendrerit felis, vitae aliquam mi egestas nec. In lacus nibh, iaculis a cursus at, pulvinar non urna. Morbi rhoncus a felis vitae auctor. Suspendisse congue vel odio ac sollicitudin. Vestibulum pretium efficitur porttitor. Integer sem magna, cursus a auctor egeto.
+            p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vitae tristique urna. Sed a et.
+      include /panel-indicators.pug
+    include /panel-arrows.pug
