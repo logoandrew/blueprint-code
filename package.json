@@ -2,15 +2,15 @@
   "name": "bpcode",
   "version": "0.0.1",
   "description": "",
-  "main": "build/index.html",
+  "main": "docs/index.html",
   "scripts": {
-    "watch:sass": "sass --watch src/sass:build/css",
-    "build:sass": "sass src/sass:build/css",
+    "watch:sass": "sass --watch src/sass:docs/css",
+    "build:sass": "sass src/sass:docs/css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
-    "postbuild": "postcss build/css/*.css -u autoprefixer cssnano -r --no-map"
+    "postbuild": "postcss docs/css/*.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
