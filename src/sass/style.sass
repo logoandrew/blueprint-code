@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap')
 
-@font-face
-  font-family: 'Arrrows'
-  src: url('../fonts/Arrrows-Regular.woff') format('woff')
-
-.font-arrows
-  font-family: "Arrrows", sans-serif
-  font-weight: 400
-
+// COLORS //
 $white: #FFFFFF
 $green: #73B44A
 $green-ada: #428615
@@ -31,6 +24,37 @@ $dark-grey-text: #565A5C
 $medium-grey-display-text: #807B7D
 $near-white: #F1F1F1
 
+// DEFAULT TYPOGRAPHY //
+$base-font-family: "Montserrat", sans-serif
+$display-font-family: $base-font-family
+$base-font-size: 16px
+$base-font-size--mobile: 14px
+$base-font-size--print: 18px
+$base-line-height: 26px
+$base-line-height--mobile: 22px
+$base-line-height--print: 23px
+$base-letter-spacing: -0.00625em
+$base-font-color: $dark-grey-text
+
+// SIZES AND SPACING //
+$mobile-max-width: 1000px
+$mobile-gutter: 16px
+$print-gutter: 57px
+$inner-panel-height: 705px
+$panel-gap: 60px
+$panel-gap--mobile: 30px
+
+// DESIGN SPECIFIC //
+$splash--overlap: 190px
+
+@font-face
+  font-family: 'Arrrows'
+  src: url('../fonts/Arrrows-Regular.woff') format('woff')
+
+.font-arrows
+  font-family: "Arrrows", sans-serif
+  font-weight: 400
+
 html
   box-sizing: border-box
 
@@ -47,22 +71,22 @@ img, .img-responsive
 
 body
   background-color: #001f24
-  letter-spacing: -.00625em
-  font-size: 16px
-  line-height: 26px
-  font-family: "Montserrat", sans-serif
-  color: $dark-grey-text
+  letter-spacing: $base-letter-spacing
+  font-size: $base-font-size
+  line-height: $base-line-height
+  font-family: $base-font-family
+  color: $base-font-color
   padding-bottom: 50px
-  @media (max-width: 1000px)
-    font-size: 14px
-    line-height: 22px
+  @media (max-width: $mobile-max-width)
+    font-size: $base-font-size--mobile
+    line-height: $base-line-height--mobile
   .print
-    font-size: 18px
-    line-height: 23px
+    font-size: $base-font-size--print
+    line-height: $base-line-height--print
     color: #000
-    @media (max-width: 1000px)
-      font-size: 18px
-      line-height: 23px
+    @media (max-width: $mobile-max-width)
+      font-size: $base-font-size--print
+      line-height: $base-line-height--print
 
 body *
   font-family: inherit
@@ -129,7 +153,7 @@ body *
   span.active, span:hover
     background-color: $dark-purple
     cursor: pointer
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     display: none
 
 .panel-indicators.mobile
@@ -150,7 +174,7 @@ body *
   height: 38px
   &:hover .bg
     fill: $purple
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     display: none
 .panel-arrows.left-arrow
   left: 0
@@ -162,7 +186,7 @@ body *
   width: 100%
   height: 30px
   position: relative
-  @media (min-width: 1000px)
+  @media (min-width: $mobile-max-width)
     display: none
 
 .mobile-nav.top
@@ -192,16 +216,16 @@ body *
   max-width: 1170px
   margin: 0 auto
   position: relative
-  @media (max-width: 1000px)
-    padding: 0 16px
+  @media (max-width: $mobile-max-width)
+    padding: 0 $mobile-gutter
 
 .print .container-outer
-  padding: 0 57px
+  padding: 0 $print-gutter
   max-width: 100%
 
 .container-inner
   padding: 70px 0 74px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     padding: 30px 0
 
 .print .container-inner
@@ -212,22 +236,22 @@ body *
   line-height: 1.111
   font-weight: 600
   font-size: 18px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     display: none
 
 .panel-card
   display: flex
   margin-top: 21px
-  min-height: 705px
-  gap: 60px
+  min-height: $inner-panel-height
+  gap: $panel-gap
   & > *
     align-self: center
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     flex-direction: column
     justify-content: start
     margin-top: 0
     min-height: 75vh
-    gap: 30px
+    gap: $panel-gap--mobile
 
 .print .panel-card
   margin-top: 0
@@ -235,7 +259,7 @@ body *
   height: 393px
   gap: 50px
   width: 100%
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     flex-direction: row
     justify-content: start
     margin-top: 0
@@ -247,7 +271,7 @@ h2
   letter-spacing: -0.0116em
   line-height: 42px
   font-weight: 200
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     font-size: 25px
     line-height: 35px
 
@@ -257,7 +281,7 @@ h3
   line-height: 1.28
   font-weight: 600
   color: $dark-purple
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     font-size: 21px
 
 .print h3, .print h2
@@ -266,43 +290,43 @@ h3
   line-height: 1.28
   font-weight: 600
   color: $dark-purple
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     font-size: 21px
 
 p
   margin-top: 13px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     margin-top: 11px
 
 .print p
   margin-top: 9px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     margin-top: 9px
 
 h2 + p
   margin-top: 25px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     margin-top: 21px
 
 h3 + p
   margin-top: 20px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     margin-top: 17px
 
 .print h3 + p, .print h2 + p
   margin-top: 16px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     margin-top: 16px
 
 .btn
   font-weight: 500
   margin-top: 25px
-  @media (max-width: 1000px)
+  @media (max-width: $mobile-max-width)
     margin-top: 21px
   &:hover
     text-decoration: underline
     cursor: pointer
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       cursor: default
 
 .print
@@ -313,31 +337,31 @@ h3 + p
   .column-one
     flex-shrink: 1
   .column-two
-    margin-left: -190px
-    max-width: calc(100% - 705px - 60px + 190px)
+    margin-left: (-$splash--overlap)
+    max-width: calc(100% - $inner-panel-height - $panel-gap + $splash--overlap)
     min-width: 450px
     z-index: 100
-    @media (max-width: 1000px)
-      margin: 0 16px
+    @media (max-width: $mobile-max-width)
+      margin: 0 $mobile-gutter
       margin-top: calc(-30px - 40px)
       max-width: 100%
       min-width: auto
   .blurb
     color: $white
-    padding: 40px 60px
+    padding: 40px $panel-gap
     background-color: rgba($green-ada, .95)
-    @media (max-width: 1000px)
-      padding: 20px 16px
+    @media (max-width: $mobile-max-width)
+      padding: 20px $mobile-gutter
   &.print
     .column-one
       flex: 0 0 393px
-      margin-left: -57px
+      margin-left: (-$print-gutter)
     .column-two
       margin-left: 0
       width: 100%
       max-width: none
       min-width: initial
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         margin: 0
         width: 100%
     .blurb
@@ -346,31 +370,31 @@ h3 + p
       background-color: #fff
       .btn
         display: none
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         padding: 0
 
 .splash-alt
   .column-one
     order: 2
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       order: 1
   .column-two
     order: 1
     margin-left: 0
-    margin-right: -190px
-    @media (max-width: 1000px)
+    margin-right: -$splash--overlap
+    @media (max-width: $mobile-max-width)
       order: 2
-      margin: 0 16px
+      margin: 0 $mobile-gutter
       margin-top: calc(-30px - 40px)
   &.print
     .column-one
       order: 1
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         order: 1
     .column-two
       order: 2
       margin-right: 0px
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         order: 2
 
 .large-asset
@@ -379,22 +403,22 @@ h3 + p
     .image
       border-right: 10px solid $green
   .column-two
-    max-width: calc(100% - 660px - 60px - 10px)
+    max-width: calc(100% - 660px - $panel-gap - 10px)
     min-width: 315px
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       max-width: 100%
       min-width: auto
   &.print
     .column-one
       flex: 0 0 366px
-      margin-left: -57px
+      margin-left: (-$print-gutter)
       .image
         border-right: none
     .column-two
       width: 100%
       max-width: none
       min-width: initial
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         max-width: 100%
         min-width: auto
 
@@ -404,9 +428,9 @@ h3 + p
     .image
       border-bottom: 10px solid $green
   .column-one
-    max-width: calc(100% - 520px - 60px)
+    max-width: calc(100% - 520px - $panel-gap)
     min-width: 480px
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       max-width: 100%
       min-width: auto
   &.print
@@ -414,14 +438,14 @@ h3 + p
       gap: 30px
     .column-two
       flex: 0 0 260px
-      margin-right: -57px
+      margin-right: (-$print-gutter)
       .image
         border-bottom: none
     .column-one
       width: 100%
       max-width: none
       min-width: initial
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         max-width: 100%
         min-width: auto
 
@@ -432,9 +456,9 @@ h3 + p
     gap: 10px
     flex-shrink: 1
   .column-one
-    max-width: calc(100% - 520px - 60px)
+    max-width: calc(100% - 520px - $panel-gap)
     min-width: 480px
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       max-width: 100%
       min-width: auto
   &.print
@@ -442,12 +466,12 @@ h3 + p
       gap: 30px
     .column-two
       flex: 0 0 260px
-      margin-right: -57px
+      margin-right: (-$print-gutter)
     .column-one
       width: 100%
       max-width: none
       min-width: initial
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         max-width: 100%
         min-width: initial
 
@@ -461,9 +485,9 @@ h3 + p
       display: flex
       gap: 10px
   .column-two
-    max-width: calc(100% - 520px - 60px)
+    max-width: calc(100% - 520px - $panel-gap)
     min-width: 480px
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       max-width: 100%
       min-width: auto
   &.print
@@ -471,12 +495,12 @@ h3 + p
       gap: 30px
     .column-one
       flex: 0 0 260px
-      margin-left: -57px
+      margin-left: (-$print-gutter)
     .column-two
       width: 100%
       max-width: none
       min-width: initial
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         max-width: 100%
         min-width: initial
 
@@ -485,50 +509,50 @@ h3 + p
     display: grid
     grid-template-columns: auto 550px
     grid-template-rows: repeat(3, auto)
-    grid-column-gap: 60px
+    grid-column-gap: $panel-gap
     grid-row-gap: 0px
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       display: block
     .bg
       grid-area: 1 / 1 / 4 / 2
       background-color: $green-ada
       height: 100%
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         display: none
   .card-container
     grid-area: 2 / 1 / 3 / 3
     display: grid
     grid-template-columns: auto 550px
     grid-template-rows: auto
-    grid-column-gap: 60px
+    grid-column-gap: $panel-gap
     grid-row-gap: 0px
     padding: 20px 0
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       display: block
       padding: 0
   .column-one
     grid-area: 1 / 1 / 2 / 2
-    padding: 0 60px
-    @media (max-width: 1000px)
+    padding: 0 $panel-gap
+    @media (max-width: $mobile-max-width)
       display: block
       padding: 0
     h3
       color: #fff
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         color: $dark-purple
   .column-two
     grid-area: 1 / 2 / 2 / 3
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       display: block
   p:first-of-type
     margin-top: 0
-    @media (max-width: 1000px)
+    @media (max-width: $mobile-max-width)
       margin-top: 17px
   &.print
     .panel-card
       grid-template-columns: auto 780px
       grid-column-gap: 50px
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         display: grid
       .bg
         display: none
@@ -536,7 +560,7 @@ h3 + p
       grid-template-columns: auto 780px
       grid-column-gap: 50px
       padding: 0
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         display: grid
         padding: 0
     .column-one
@@ -544,5 +568,5 @@ h3 + p
       h3
         color: $dark-purple
     p:first-of-type
-      @media (max-width: 1000px)
+      @media (max-width: $mobile-max-width)
         margin-top: 0px
