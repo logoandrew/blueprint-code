@@ -1,0 +1,24 @@
+extends /layout.pug
+
+block vars
+  - var panel_class = "stats"
+
+block content
+  .container-outer
+    .container-inner
+      h5.panel-header Panel Header Goes Here Max Characters Lorem Ipsum Dolor Sit Amet Aenean Suscipit
+      .panel-card
+        .column-one
+          h3 Secondary header lorem ipsum dolor sit amete consec tetur adipiscing elite morbi eu erat tortor. Donec tempor placerat feugiate vestibulum nib sapien.
+          .stat-row
+            .stat-card 
+              .stat-head $XXX.XX
+              .stat-body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus malesuada orci, sed pulvinar ipsum faucibus vitae. Nunc in ex leo. Aenean consequat et diam et aliquam. Curabitur tincidunt blandit velit. Cras suscipit euismod felis, in dictum sem. Sed sed justo urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hamen.
+            .stat-card 
+              .stat-head XX%
+              .stat-body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus malesuada orci, sed pulvinar ipsum faucibus vitae. Nunc in ex leo. Aenean consequat et diam et aliquam. Curabitur (short example).
+            .stat-card 
+              .stat-head XX,XXX
+              .stat-body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus malesuada orci, sed pulvinar ipsum faucibus vitae. Nunc in ex leo. Aenean consequat et diam et aliquam. Curabitur tincidunt blandit velit. Cras suscipit euismod felis, in dictum sem. Sed sed justo urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hamen.
+      include /panel-indicators.pug
+    include /panel-arrows.pug

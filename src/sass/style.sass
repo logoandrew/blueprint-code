@@ -47,6 +47,17 @@ $panel-gap--mobile: 30px
 // DESIGN SPECIFIC //
 $splash--overlap: 190px
 
+@mixin word-wrap
+  overflow-wrap: break-word
+  word-wrap: break-word
+  -ms-word-break: break-all
+  word-break: break-all
+  word-break: break-word
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto
+
 @font-face
   font-family: 'Arrrows'
   src: url('../fonts/Arrrows-Regular.woff') format('woff')
@@ -70,13 +81,13 @@ img, .img-responsive
   background-color: #888
 
 body
-  background-color: #001f24
+  background-color: #001f24 // for viewer purposes only
   letter-spacing: $base-letter-spacing
   font-size: $base-font-size
   line-height: $base-line-height
   font-family: $base-font-family
   color: $base-font-color
-  padding-bottom: 50px
+  padding-bottom: 50px // for viewer purposes only
   @media (max-width: $mobile-max-width)
     font-size: $base-font-size--mobile
     line-height: $base-line-height--mobile
@@ -115,9 +126,9 @@ body *
 
 #panel
   margin: 0 auto
-  outline: 1px solid #000
-  box-shadow: 1px 5px 25px #000000cc
-  overflow: hidden
+  outline: 1px solid #000 // for viewer purposes only
+  box-shadow: 1px 5px 25px #000000cc // for viewer purposes only
+  overflow: hidden // for viewer purposes only
 
 // #panel.web, #panel.notes, #panel.map
 //   width: 100%
@@ -570,3 +581,102 @@ h3 + p
     p:first-of-type
       @media (max-width: $mobile-max-width)
         margin-top: 0px
+
+.stats
+  .column-one
+    .stat-row
+      display: grid
+      grid-auto-flow: column
+      grid-auto-columns: 1fr
+      margin-top: 110px
+      @media (max-width: $mobile-max-width)
+        grid-auto-flow: row
+        margin-top: 0
+    .stat-card
+      padding: 0 25px
+      background-color: $near-white
+      &:first-of-type
+        padding-left: 50px
+        .stat-head
+          background-color: $dark-purple
+      &:last-of-type
+        padding-right: 50px
+        .stat-head
+          background-color: #2C9FC9
+      @media (max-width: $mobile-max-width)
+        padding: 0 $mobile-gutter
+        margin-top: calc(45px + 30px)
+        &:first-of-type
+          padding-left: $mobile-gutter
+        &:last-of-type
+          padding-right: $mobile-gutter
+      .stat-head
+        @include word-wrap
+        background-color: $green-ada
+        padding: 40px 24px
+        text-align: center
+        color: #fff
+        margin-top: -60px
+        font-size: 28px
+        line-height: 1.2
+        font-weight: 700
+        @media (max-width: $mobile-max-width)
+          padding: 30px $mobile-gutter
+          margin-top: -45px
+          font-size: 24px
+      .stat-body
+        padding: 20px 0 60px
+        @media (max-width: $mobile-max-width)
+          padding: 17px 0 20px
+  &.print
+    .column-one
+      display: flex
+      gap: 50px
+      .stat-row
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: 1fr
+        margin-top: 0
+        grid-gap: 50px
+        @media (max-width: $mobile-max-width)
+          grid-auto-flow: column
+          margin-top: 0
+      .stat-card
+        width: 220px
+        padding: 0
+        background-color: #fff
+        &:first-of-type
+          padding-left: 0
+          .stat-head
+            background-color: #fff
+        &:last-of-type
+          padding-right: 0
+          .stat-head
+            background-color: #fff
+        @media (max-width: $mobile-max-width)
+          padding: 0
+          margin-top: 0
+          &:first-of-type
+            padding-left: 0
+          &:last-of-type
+            padding-right: 0
+        .stat-head
+          background-color: #fff
+          padding: 0
+          text-align: left
+          color: $dark-purple
+          margin-top: 0
+          font-size: 26px
+          line-height: 1.2
+          font-weight: 700
+          @media (max-width: $mobile-max-width)
+            padding: 0
+            margin-top: 0
+            font-size: 26px
+        .stat-body
+          padding: 0
+          font-size: 16px
+          line-height: 1.33
+          margin-top: 15px
+          @media (max-width: $mobile-max-width)
+            padding: 0
