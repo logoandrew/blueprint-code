@@ -1,3 +1,12 @@
+---js
+{
+  img1_width: 520,
+  img1_height: 440,
+  img2_width: 255,
+  img2_height: 255,
+}
+---
+
 extends /layout.pug
 
 block vars
@@ -10,12 +19,12 @@ block content
       .panel-card
         .column-one
           .image
-            img.img-responsive(src='https://picsum.photos/520/440.jpg' width='520' height='440')
+            +placeholderIMG(img1_width, img1_height, "img-responsive")
           .image-group
             .image
-              img.img-responsive(src='https://picsum.photos/255/255.jpg?random=1' width='255' height='255')
+              +placeholderIMG(img2_width, img2_height, "img-responsive", 1)
             .image
-              img.img-responsive(src='https://picsum.photos/255/255.jpg?random=2' width='255' height='255')
+              +placeholderIMG(img2_width, img2_height, "img-responsive", 2)
         .column-two
           .blurb
             h3 Secondary header lorem ipsum dolor sit amete consec tetur adipiscing elite morbi eu erat tortor. Donec tempor placerat feugiate vestibulum nib sapien.

@@ -1,3 +1,10 @@
+---js
+{
+  img1_width: 705,
+  img1_height: 705,
+}
+---
+
 extends /layout.pug
 
 block vars
@@ -10,7 +17,7 @@ block content
       .panel-card
         .column-one
           .image
-            img.img-responsive(src='https://picsum.photos/705/705.jpg' width='705' height='705')
+            +placeholderIMG(img1_width, img1_height, "img-responsive")
         .column-two
           .blurb
             h2 Primary Header Lorem Ipsum Dolor Sit Amete Consectetur Adipiscing Elite Maecenas Vitae Diam Id Nibha

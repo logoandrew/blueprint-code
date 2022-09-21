@@ -1,3 +1,10 @@
+---js
+{
+  img1_width: 520,
+  img1_height: 705 - 10,
+}
+---
+
 extends /layout.pug
 
 block vars
@@ -16,6 +23,6 @@ block content
             p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vitae tristique urna. Sed a et.
         .column-two
           .image
-            img.img-responsive(src='https://picsum.photos/520/695.jpg' width='520' height='695')
+            +placeholderIMG(img1_width, img1_height, "img-responsive")
       include /panel-indicators.pug
     include /panel-arrows.pug

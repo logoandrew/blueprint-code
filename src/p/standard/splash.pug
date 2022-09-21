@@ -1,19 +1,26 @@
+---js
+{
+  img1_width: 705,
+  img1_height: 705,
+}
+---
+
 extends /layout.pug
 
 block vars
   - var panel_class = "splash"
 
 block content
-  .container-outer
+  .container-outer 
     .container-inner
-      h5.panel-header Panel Header Goes Here Max Characters Lorem Ipsum Dolor Sit Amet Aenean Suscipit
+      h5.panel-header= lorem.panel_header
       .panel-card
         .column-one
-          .image
-            img.img-responsive(src='https://picsum.photos/705/705.jpg' width='705' height='705')
+          .image 
+            +placeholderIMG(img1_width, img1_height, "img-responsive")
         .column-two
           .blurb
-            h2 Primary Header Lorem Ipsum Dolor Sit Amete Consectetur Adipiscing Elite Maecenas Vitae Diam Id Nibha
+            h2= lorem.primary_header
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget accumsan orci, in cursus lacus. Aliquam sagittis vitae ante quis posuere. Donec hendrerit convallis nulla nec facilisis. Nullam nibh libero, maximus in orci commodo, facilisis blandit neque. Suspendisse libero tel. 
             p Vivamus tristique mattis lectus, nec venenatis diam vulputate nec. Sed condimentum, lorem et mattis efficitur, magna odio consectetur purus, a commodo magna sem.
             p.btn 

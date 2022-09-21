@@ -1,3 +1,10 @@
+---js
+{
+  img1_width: 660,
+  img1_height: 705,
+}
+---
+
 extends /layout.pug
 
 block vars
@@ -10,7 +17,7 @@ block content
       .panel-card
         .column-one
           .image
-            img.img-responsive(src='https://picsum.photos/660/705.jpg' width='660' height='705')
+            +placeholderIMG(img1_width, img1_height, "img-responsive")
         .column-two
           .blurb
             h3 Secondary header lorem ipsum dolor sit amete consectetur adipiscing elite phasellus fermentum ultrices lacus, quis erat curae
