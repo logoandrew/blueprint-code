@@ -1,3 +1,12 @@
+---js
+{
+  img1_width: 660,
+  img1_height: 705,
+  copy1_characters: 650,
+  copy1_paragraphs: 2,
+}
+---
+
 extends /layout.pug
 
 block vars
@@ -6,15 +15,14 @@ block vars
 block content
   .container-outer
     .container-inner
-      h5.panel-header Panel Header Goes Here Max Characters Lorem Ipsum Dolor Sit Amet Aenean Suscipit
+      include /panel-header--standard.pug
       .panel-card
         .column-one
           .image
-            img.img-responsive(src='https://picsum.photos/660/705.jpg' width='660' height='705')
+            +placeholderImg(img1_width, img1_height, "img-responsive")
         .column-two
           .blurb
-            h3 Secondary header lorem ipsum dolor sit amete consectetur adipiscing elite phasellus fermentum ultrices lacus, quis erat curae
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed tortor dignissim, porta urna sed, mattis mi. Integer mattis ac ligula sit amet ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur tellus vitae tortor posuere pharetra. Nulla lobortis tortor ve venenatis euismod. Vestibulum euismod leo diam, at fringilla est fringilla ut. 
-            p Pellentesque eget nisi at neque vestibulum vehicula sed at justo. Morbi varius sagittis consequat. Praesent nec ullamcorper nisl, et rhoncus urna. Suspendisse sit amet libero non nisi tincidunt convallis eu id arcu. Quisque a pulvinar nisi. Praesent eget nulla id quis.
+            h3= placeholder.char(125)
+            +insertParagraphs(copy1_characters, copy1_paragraphs)
       include /panel-indicators.pug
     include /panel-arrows.pug

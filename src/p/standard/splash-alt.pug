@@ -2,6 +2,8 @@
 {
   img1_width: 705,
   img1_height: 705,
+  copy1_characters: 450,
+  copy1_paragraphs: 2,
 }
 ---
 
@@ -13,16 +15,15 @@ block vars
 block content
   .container-outer
     .container-inner
-      h5.panel-header Panel Header Goes Here Max Characters Lorem Ipsum Dolor Sit Amet Aenean Suscipit
+      include /panel-header--standard.pug
       .panel-card
         .column-one
           .image
-            +placeholderIMG(img1_width, img1_height, "img-responsive")
+            +placeholderImg(img1_width, img1_height, "img-responsive")
         .column-two
           .blurb
-            h2 Primary Header Lorem Ipsum Dolor Sit Amete Consectetur Adipiscing Elite Maecenas Vitae Diam Id Nibha
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget accumsan orci, in cursus lacus. Aliquam sagittis vitae ante quis posuere. Donec hendrerit convallis nulla nec facilisis. Nullam nibh libero, maximus in orci commodo, facilisis blandit neque. Suspendisse libero tel. 
-            p Vivamus tristique mattis lectus, nec venenatis diam vulputate nec. Sed condimentum, lorem et mattis efficitur, magna odio consectetur purus, a commodo magna sem.
+            h2 #{lorem.primary_header}
+            +insertParagraphs(copy1_characters, copy1_paragraphs)
             p.btn 
               a Learn more &nbsp;
               span.font-arrows m
