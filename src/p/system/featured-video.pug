@@ -1,0 +1,23 @@
+---js
+{
+  img1_width: 1060,
+  img1_height: Math.floor(1060 * (9/16)),
+}
+---
+
+extends /layout--system.pug
+
+block vars
+  - var panel_class = "featured-video"
+
+block content
+  .container-outer
+    .container-inner
+      h4.panel-header Featured video
+      .panel-card
+        .column-one
+          .video
+            +placeholderImg(img1_width, img1_height, "img-responsive")
+        .column-two
+          .blurb
+            p #{placeholder.char(200)}

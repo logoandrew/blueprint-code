@@ -228,7 +228,7 @@ body *
   position: absolute
   right: 10px
 
-#panel
+.standard
   background-color: $white
 
 .container-outer
@@ -248,14 +248,29 @@ body *
   @media (max-width: $mobile-max-width)
     padding: 30px 0
 
+.system .container-inner
+  padding: 80px 0 110px
+  @media (max-width: $mobile-max-width)
+    padding: 30px 0
+
 .print .container-inner
   padding: 0
 
-.panel-header
+h5.panel-header
+  text-transform: capitalize
   letter-spacing: -.0194em
   line-height: 1.111
   font-weight: 600
   font-size: 18px
+  @media (max-width: $mobile-max-width)
+    display: none
+
+h4.panel-header
+  text-transform: capitalize
+  letter-spacing: -.0153em
+  line-height: 1.23
+  font-weight: 600
+  font-size: 26px
   @media (max-width: $mobile-max-width)
     display: none
 
@@ -272,6 +287,11 @@ body *
     margin-top: 0
     min-height: 75vh
     gap: $panel-gap--mobile
+
+.system .panel-card
+  min-height: initial
+  @media (max-width: $mobile-max-width)
+    min-height: inital
 
 .print .panel-card
   margin-top: 0
@@ -350,6 +370,21 @@ h3 + p
     cursor: pointer
     @media (max-width: $mobile-max-width)
       cursor: default
+
+.video
+  position: relative
+  cursor: pointer
+  &::after
+    content: url("../assets/video-play@2x.png")
+    opacity: 75%
+    height: 68px
+    width: 92px
+    position: absolute
+    top: calc(50% - 34px)
+    left: calc(50% - 46px)
+  &:hover
+    &::after
+      opacity: 1
 
 .print
   .panel-header, .panel-indicators, .panel-arrows, .mobile-nav
@@ -691,3 +726,29 @@ h3 + p
           margin-top: 15px
           @media (max-width: $mobile-max-width)
             padding: 0
+
+.featured-video
+  position: relative
+  background-color: $purple
+  color: $white
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    width: 100%
+    height: 50%
+    background-image: url("../assets/purple-interlocking@2x.png")
+    background-size: 124px
+    background-repeat: repeat
+  .panel-card
+    flex-direction: column
+    gap: 30px
+  .blurb
+    font-size: 19px
+    line-height: 1.63
+    letter-spacing: -.0063
+    font-weight: 300
+    @media (max-width: $mobile-max-width)
+      font-size: 16px
+    p
+      margin-top: 0
